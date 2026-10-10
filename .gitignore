@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+models/
+.env
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+kubeconfig*
+*.pem
+*.key
