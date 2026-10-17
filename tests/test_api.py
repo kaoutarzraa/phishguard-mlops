@@ -8,11 +8,11 @@ from phishguard.train import train_and_save
 
 @pytest.fixture(scope="module")
 def client(tmp_path_factory):
-    model_dir = tmp_path_factory.mktemp("models")
-    train_and_save(model_dir, n=1500)
-    os.environ["MODEL_DIR"] = str(model_dir)
+    model_dir = tmp_path_factory.mktemp("models")   # dossier temporaire
+    train_and_save(model_dir, n=1500)               # petit modèle de test
+    os.environ["MODEL_DIR"] = str(model_dir)        # dit à l'app où le trouver
     from phishguard.app import app
-    with TestClient(app) as c:
+    with TestClient(app) as c:                      # 'with' lance le lifespan
         yield c
 
 
