@@ -1,0 +1,9 @@
+.git
+venv
+__pycache__
+models
+tests
+terraform
+k8s
+.github
+*.md
